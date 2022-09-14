@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../estils/estils.css">
+</head>
+
+<body>
+	<h2>Digitalització</h2>
+	<h3>Senyals analògics i digitals</h3>
+	<p>
+		La majoria de fenòmens que podem mesurar en la natura es manifesten de manera analògica.
+		Un exemple el tenim en la temperatura; al llarg del dia la temperatura no varia d'una manera instantània sinó que ho fa
+		d’una manera progressiva. Per a passar de 20ºC a 25ºC hem de passar per tots els infinits valors que hi ha entre
+		estes dues temperatures. Passa el mateix amb la velocitat, el temps, la pressió, etc.
+	</p>
+	<p>
+		Es diu que un senyal és continu quan no passa en cap moment d'un valor a un altre saltant-se els valores intermedis.
+		Un senyal analògic és un senyal que varia d'una manera contínua al llarg del temps.
+	</p>
+	<p>
+		Es diu que un senyal és discontinu si pot passar d'un valor a un altre sense passar pels valors intermedis.
+		Un senyal digital és un senyal que varia d'una manera discontinua al llarg del temps i que només pot prendre certs valors.
+	</p>
+
+	<figure>
+		<img src="imatges/Senyal_analogic_digital.png" />
+	</figure>
+
+	<h3>Procés de gravació i reproducció d’àudio analògic</h3>
+	<p>
+		Abans de centrar-nos en els senyals digitals, resulta instructiu fer un poc d’història i saber com es feien les coses
+		abans de l’època digital actual. En concret, estudiarem com era el procés de gravació i reproducció d’àudio analògic per
+		a ampliar-lo després al digital.
+	</p>
+	<p>
+		La següent figura mostra, d’esquerra a dreta, una cinta de vídeo, una casset d’àudio, una bobina de cinta magnètica
+		i l’esquema del mecanisme intern d’una cinta..
+	</p>
+	<figure>
+		<img src="imatges/Estructura_basica_cinta.svg" />
+	</figure>
+	<p>
+		La bobina es coneix com a magnètica perquè està recoberta per una pel·lícula de material magnetitzable.
+		El mecanisme intern de dins de la carcassa permet que la cinta s’enrotlle per un costat mestre es desenrotlle
+		per l’altre i, en el seu recorregut, es fa passar pel capçal de gravació/reproducció.
+	</p>
+	<h4>Gravació sobre cinta magnètica</h4>
+	<p>
+		El procés de gravació d’àudio seguix els següents passos:
+	</p>
+	<ol>
+		<li>
+			Quan parlem, les cordes vocals fan vibrar les molècules d’aire que les envolten.
+			Estes molècules, al seu torn, fan que les molècules del seu voltant vibren també.
+			Esta vibració es propaga de molècula a molècula fent que el so viatge fins arribar al micròfon.
+		</li>
+		<li>
+			A l’igual que en la oïda humana, els micròfons tenen una membrana que vibra amb el so que li arriba.
+			Esta vibració es convertix en variacions de voltatge (energia elèctrica).
+			Com es un voltatge molt dèbil este s’ha d’amplificar.
+		</li>
+		<li>
+			Una vegada amplificat arriba al capçal, este transforma les variacions de tensió que li arriben
+			en unes variacions d’un camp magnètic.
+			Per davall del capçal esta passant constantment la cinta on les partícules magnètiques que la
+			impregnen es van reordenant segons les variacions d’este camp magnètic.
+		</li>
+	</ol>
+	<figure>
+		<img src="imatges/Proces_gravacio_en_cinta.png" />
+	</figure>
+
+	<h4>Reproducció sobre cinta magnètica</h4>
+	<p>
+		Els procés de reproducció es similar, però a la inversa.
+	</p>
+	<ol>
+		<li>
+			Com abans, la cinta corre davall del capçal, però en este cas, són les variacions de les partícules magnètiques
+			que van provocar durant la gravació les que fan que el capçal genere les variacions de tensió.
+		</li>
+		<li>
+			Com esta tensió és dèbil necessita ser amplificada.
+		</li>
+		<li>
+			El senyal d’eixida de l’amplificador va cap un altaveu que actua com les cordes vocals.
+			Disposa d’una membrana que vibra al ritme de les variacions del senyal que li arriben i crea el so.
+		</li>
+	</ol>
+	<figure>
+		<img src="imatges/Proces_reproduccio_desde_cinta.png" />
+	</figure>
+
+	<h3>Procés de lectura/escriptura en un disc dur</h3>
+	<p>
+		A continuació, enllaçarem el que hem vist amb el món digital,
+		i ho farem comparant el procés de gravació/lectura d’una cinta amb el d’un disc dur.
+	</p>
+	<p>
+		Bàsicament, un disc dur està format per un plat impregnat d’una capa de material magnetitzable. I, com en les cintes,
+		tenim un capçal capaç de gravar variacions magnètiques sobre este material i de llegir-les posteriorment.
+	</p>
+	<figure>
+		<img src="imatges/Parts_disc_dur.png" />
+	</figure>
+	<p>
+		En les cintes, el moviment continu de la cinta fa que la informació (el so) es grave i llisca de manera seqüencial
+		segons va passant la cinta.
+		Això fa que, si la cinta està bobinada i volem escoltar una cançó que està al principi haurem de rebobinar-la i
+		buscar el punt on comença eixa cançó. És diu que té un accés seqüencial.
+	</p>
+	<p>
+		Per contra, en els discos durs, el plat gira a una velocitat constant i sobre ell el capçal es pot moure lliurement
+		per tota la superfície i arribar a qualsevol lloc ràpidament. És diu que té un accés aleatori.
+	</p>
+	<p>
+		En les cintes, l’objectiu de la gravació és la de plasmar magnèticament les vibracions de les molècules de l’aire i
+		el de la reproducció el de regenerar estes vibracions de nou.
+		Un bon procés de gravació/reproducció serà aquell on el so que generem siga el més fidedigne possible a l’original.
+	</p>
+	<p>
+		En els discos, el procés de gravació i lectura també es magnètica, la diferència està en el tipus d’informació que
+		estem gravant que no es altra que els bits amb què està formada la informació digital.
+		Evidentment, la tecnologia en els discos és molt més avançada, permetent gravar més informació en menys espai i accedir
+		a ella d’una manera notablement més ràpida.
+	</p>
+	<p>
+		En la següent figura es veu la manera en què es magnetitza la superfície del disc. Les variacions magnètiques es graven
+		en profunditat per a ocupar menys espai i la direcció de magnetització marca si es tracta d’un 1 o un 0 (un bit).
+	</p>
+	<figure>
+		<img src="imatges/Proces_gravacio_disc_dur.png" />
+	</figure>
+
+	<h3>El procés de digitalització</h3>
+	<p>
+		El món en què vivim és un món analògic i la raó per la qual es digitalitza és perquè ens aporta molts avantatges.
+	</p>
+	<p>
+		La digitalització ha suposat un canvi radical en el tractament de la informació.
+		Ara podem emmagatzemament-la en grans quantitats i en dispositius de dimensions reduïdes, manipular-la amb facilitat, reproduir-la
+		sense pèrdua de qualitat i, gràcies a les xarxes informàtiques, fer-la accessible en temps real des de qualsevol lloc del món.
+		En general, podem afirmar que tot allò que siga susceptible de ser transformat en un senyal elèctric pot ser codificat
+		digitalment, emmagatzemat i tractat per un sistema informàtic.
+	</p>
+
+	<h4>Sensors</h4>
+	<p>
+		Els senyals analògics provenen dels sensors.
+		Es tracta de dispositius capaços de capturar algun tipus de magnitud física i de convertir-la en un senyal elèctric.
+		Així tenim, entre altres, sensors de temperatura, de llum, de pressió, de posició, de moviment, de so, etc.
+	</p>
+	<h4>Què es digitalitzar</h4>
+	<p>
+		Tornem al cas de la captura de so analògic.
+		Sabem que el micro (un sensor de so) transforma el so en un senyal elèctric analògic.
+		Ara suposem que el connectem a l’entrada de micro de l’ordinador.
+	</p>
+	<p>
+		En la placa base, hi ha un xip que s’encarrega de fer el procés de digitalització, fa una conversió A/D convertint el senyal
+		analògic en un de digital.
+	</p>
+	<p>
+		En breu: Digitalitzar és convertir un senyal analògic en un senyal digital, és a dir en una seqüència de nombres expressat en binari.
+	</p>
+	<p>
+		Bàsicament, este procés consistix en anar prenent mostres del senyal analògic a intervals regulars, vore quin és el valor de
+		la tensió elèctrica en cada mostra i convertir eixa tensió en un nombre en binari.
+		La seqüencia de nombres que es va generant és el que es coneix com a senyal digital.
+		Este senyal digital podrà ser capturat per algun programa i gravat en disc en algun format de so.
+	</p>
+	<p>
+		Encara que digitalitzem la realitat per conveniència, esta continua sent analògica.
+		Això implica que, en algun moment, haurem de fer el pas invers.
+		És a dir, a partir dels nombres que hem generat en el procés A/D haurem de tornar a crear una ona que s’ha de parèixer
+		el més possible a l’original.
+		Este procés invers és el que s’anomena conversió digital/analògic o D/A.
+	</p>
+	<figure>
+		<img src="imatges/Que_es_digitalitzar.png" />
+	</figure>
+	<h4>Conversió A/D</h4>
+	<p>
+		El procés de conversió A/D consistix essencialment en 3 passos, que són els que es mostren en la figura següent:
+		Mostreig, quantificació i codificació.
+	</p>
+
+	<figure>
+		<img src="imatges/Passos_conversio_A_D.svg" />
+	</figure>
+
+	<h4>Mostreig</h4>
+	<p>
+		Fixem-nos en la següent gràfica.
+		La de l’esquerra representa el senyal elèctric generat pel micròfon i en ella es pot vore el primer pas en el
+		procés de digitalització anomenat mostreig.
+	</p>
+
+	<figure>
+		<img src="imatges/Mostreig.png" />
+	</figure>
+
+	<p>
+		Els mostreig consistix en agafar a intervals de temps regulars (t1, t2, t3, t4..) el valor del voltatge del
+		senyal analògic (v1, v2, v3, v4...)
+	</p>
+	<p>
+		El circuit electrònic que realitza la conversió s’anomena conversor A/D i el que fa és prendre mostres a
+		una determinada velocitat, a unes determinades mostres per segon.
+		Les unitats de la freqüència de mostreig són els Hertz.
+	</p>
+	<p>
+		El resultat del procés de mostreig és una ona quadrada. Una ona quadrada és aquella que quan
+		canvia el valor de la seua amplitud ho fa de manera directa, sense passar pels seus valors intermedis.
+		Es genera perquè quan el circuit de digitalització pren una mostra manté el valor de la tensió capturada
+		fins el següent mostreig.
+	</p>
+
+	<figure>
+		<img src="imatges/Onda_quadrada.png" />
+	</figure>
+
+	<p>
+		A major freqüència de mostreig, la quantitat de nombres generada serà major i això permetrà que,
+		quan fem la conversió D/A, puguem reconstruir l’ona original amb major exactitud.
+	</p>
+
+	<figure>
+		<img src="imatges/Augment_frequencia_mostreig.png" />
+	</figure>
+
+	<p>
+		Una ona de freqüència baixa se sent com un so greu, mentre que una d’alta freqüència com un so agut.
+		Una ona de so del món real és la suma de múltiples ones a diferents freqüències, de les més baixes a les més altes.
+	</p>
+	<p>
+		Quant més alta siga la freqüència de mostreig serem capaços de capturar freqüències més altes.
+		Si la freqüència de mostreig es baixa, entre mostra i mostra, el senyal del so pot haver vibrat i no quedar enregistrat
+		digitalment.
+	</p>
+
+	<figure>
+		<img src="imatges/Ona_frequencia_baixa_alta.png" />
+	</figure>
+
+	<p>
+		Com a curiositat les freqüències de mostreig estàndard en àudio digital són de 24KHz, 30KHz, 44,1KHz i 48KHz.
+	</p>
+
+	<h4>
+		Resolució o profunditat de bits
+	</h4>
+	<p>
+		Acabem de vore que el mostreig genera una seqüència de nombres codificats en binari.
+		Però, de quants bits és cadascun d’estos nombres? A esta quantitat de bits se la coneix
+		com a <i>resolució</i> o <i>profunditat de bits</i>.
+	</p>
+	<p>
+		Per exemple, una resolució de 4 bits vol dir que cada nombre és de 4 bits de longitud. Això implica que,
+		l’ample del senyal que estem digitalitzant estarà subdividit en 16 parts ja que, amb 4 bits,
+		podem expressar des del 0000<sub>2</sub> a l’1111<sub>2</sub>, que son 16 nombres.
+	</p>
+	<p>
+		Si la resolució fóra de 8 bits, tendríem subdividit l’ample del senyal en 256 parts, ja que,
+		amb 8 bits podem expressar des del 00000000<sub>2</sub> a l'11111111<sub>2</sub>.
+	</p>
+
+	<p>
+		La següent figura mostra la mateixa ona digitalitzada a la mateixa freqüència (f=22Hz) però amb resolucions diferents (4 i 3 bits).
+		Podem observar que, a major resolució els puntets del mostreig cauen més a prop de l’ona original.
+		Dit d’altra manera, a major resolució, tenim més subdivisions, més possibilitats que els punts de mostreig estiguen més pròxim per
+		on passa l’ona.
+	</p>
+
+	<figure>
+		<img src="imatges/Resolucio.png" />
+	</figure>
+
+	<p>
+		De la combinació de freqüència i resolució dependrà la qualitat del so que podrem reproduir.
+		És fàcil entendre que, a major freqüència i a major resolució requerirem de més espai per a guardar els nombres
+		ja que, més freqüència implica més nombres i més resolució que estos tinguen més bits.
+	</p>
+
+	<h4>Quantificació</h4>
+	<p>
+		El procés d’aproximar cada mostra a un dels valors permesos s’anomena quantificació. Aclarim un poc açò.
+	</p>
+	<p>
+		Segons la resolució que estiguem utilitzant, estem subdividint l’amplitud de l’ona en més o menys parts.
+		Dit d’altra manera, en més o menys valors de tensió (V) que podem capturar.
+		Eixos valors són els valors permesos de tensió.
+	</p>
+	<p>
+		Si quan fem la captura, el valor de la tensió en eixe punt no coincidix exactament amb ningun dels valors permesos,
+		agafarem el valor permés que estiga més a prop del valor real. És per això que,
+		a major resolució més valors permesos de tensió i tindrem més exactitud a l’hora de reconstruir l’ona original.
+	</p>
+	<h4>Codificació</h4>
+	És el procés d’assignar una valor binari a cada mostra quantificada.
+	<figure>
+		<img src="imatges/Codificacio.png" />
+	</figure>
+
+
+
+	<h3>Digitalització d'imatges</h3>
+	<p>
+		Per posar un exemple de digitalització diferent al de l’àudio que hem pres com a referència fins ara, vorem el de la digitalització d'imatges.
+	</p>
+
+	<h4>La llum</h4>
+	<p>
+		En la natura l’energia es manifesta de diferents maneres, així tenim l’energia mecànica, l’elèctrica, la tèrmica,
+		la química, la nuclear i l’ electromagnètica que és la que ens interessa ara.
+	</p>
+	<p>
+		Quotidianament és fàcil trobar objectes que generen energia electromagnètica: el sol, un microones per a escalfar el menjar,
+		un aparell de rajos X per a fer-nos radiografies, una bombeta, el senyal de la WiFi, etc.
+	</p>
+	<p>
+		Es tracta d’objectes molt diferents, però tots tenen en comú que emeten radiació electromagnètica en forma de fotons.
+	</p>
+	<p>
+		Sense entrar massa en detalls. Esta radiació és una ona que viatja per l’espai a la velocitat de la llum i que,
+		depenent de com s’origina, pot oscil·lar a diferents freqüències.
+		Estes ones (o fotons) oscil·len amb diferents freqüències i segons el rang de freqüències en què vibren se li ha posat un nom.
+	</p>
+	<p>
+		A tot el rang de freqüències, des de les més baixes a les més altes, formen el que s’anomena l’espectre electromagnètic i
+		el podem vore en la figura davall.
+		Si l’observem, vorem que l’espectre visible, és a dir la llum que podem vore amb els nostres ulls,
+		és només una xicoteta fracció de les diferents radiacions que existixen.
+	</p>
+
+	<figure>
+		<img src="imatges/Espectre_electromagnetic.png" />
+	</figure>
+
+
+	<h4>El color</h4>
+	<p>
+		La llum blanca provinent del sol, coneguda com a llum blanca, està en realitat formada per la superposició de diferents colors.
+		Cadascun d’estos colors és una ona que viatja a un determinada freqüència.
+	</p>
+	<p>
+		El que fa que un objecte el vegem d’un color o altre depén de la seua composició.
+		Quan la llum xoca contra un objecte, este absorbix determinades longituds d’ona i en reflectix d’altres.
+		Dit d’una manera més simple, absorbix alguns colors que formen la llum blanca i en reflectix la resta.
+	</p>
+	<p>
+		Per exemple, un objecte que veiem de color blau el que fa és absorbir tots els colors de la llum blanca excepte el blau,
+		que és la que arribarà als nostres ulls i el cervell interpretarà com a blau.
+	</p>
+
+	<figure>
+		<img src="imatges/Color_aborcion_reflexion.png" />
+	</figure>
+
+	<p>
+		Els objectes blancs són blancs perquè reflectixen tota la llum que els arriba; per contra, els objectes negres absorbixen
+		tots el colors que li arriben i no en reflectixen cap.
+	</p>
+
+	<h4>Models de color: RGB</h4>
+	<p>
+		Per a poder recrear en pantalles i impressores la gama de colors tal i com els veiem s’utilitzen diferents mètodes de
+		combinar el colors anomenats <i>models de color</i>.
+	</p>
+	<p>
+		El model RGB és un model de colors additius, amb color additius ens referim a que els colors es creen amb la barreja
+		d’altres colors, sumant la seua llum per a formar-ne de nous.
+		Este sistema l’utilitzen dispositius que emetem llum com les pantalles.
+	</p>
+	<p>
+		Tota la gama de colors es pot obtindre a partir de la barreja de tres colors bàsics o primaris: el roig (Red), el verd (Green) i el blau (Blue).
+		S’anomenen primaris perquè estos no es poden obtindre a partir de la barreja d’altres colors.
+	</p>
+	<p>
+		La suma del tres colors en la mateixa quantitat produïx llum blanca.
+		L'absència de llum és el color negre.
+	</p>
+	<figure>
+		<img src="imatges/Model_RGB.png" />
+	</figure>
+
+	<h4>Píxels i pantalles</h4>
+	<p>
+		Una imatge digital està formada per una col·lecció de punts anomenats píxels (de l’anglès picture element) col·locats
+		amb files i columnes en forma de matriu o de quadrícula.
+	</p>
+	<p>
+		Els píxels seguixen un model de color RGB.
+	</p>
+	<p>
+		Quan mirem una imatge en una pantalla, en realitat, el que estem mirant són els milions de píxels que la formen,
+		però al hi haver-ne tants, ser tant menuts i estar tan junts passen desapercebuts.
+	</p>
+	<p>
+		Si mirarem en un microscopi un pantalla com és un píxel voríem els seus tres components RGB.
+		Cada píxel està format com per 3 subpíxels de manera que el color del píxel és la suma additiva de la llum emesa
+		per cada component RGB.
+	</p>
+
+	<figure>
+		<img src="imatges/Pixels_pantalla.png" />
+	</figure>
+
+	<h4>El fotsensor de les càmeres</h4>
+	<p>
+		En les càmeres el mètode de captar el color és basa també amb el model RGB.
+	</p>
+	<p>
+		Al fer una foto la llum que arriba a la càmera des de l’objecte es concentra en un fotosensor gràcies a les lents.
+	</p>
+
+	<figure>
+		<img src="imatges/Parts_camera_lents_fotosensor.png" />
+	</figure>
+
+	<p>
+		El fotosensor disposa d’una superfície on existixen milions de fotodíodes.
+		Els fotodíodes són uns components electrònics organitzats per files i columnes, que són sensibles a la llum que els arriba.
+		Cada fotodíode correspon a un píxel de la imatge capturada.
+		El nombre de píxels dels sensors es sol mesurar amb milions de píxels o megapíxels.
+	</p>
+
+	<h4>Conversor Analògic/Digital</h4>
+	<p>
+		Quan la llum de la imatge que estem fotografiant arriba al fotosensor, cada fotodíode convertix l’energia present
+		en els fotons de la llum en una càrrega elèctrica que és major o menor en funció de la intensitat de la llum que rep.
+		Hi diferents tipus de píxels especialitzats en cadascun dels colors RGB.
+	</p>
+	<p>
+		L’electrònica del fotosensor s’encarrega de llegir el valor de corrent enregistrat per tots els fotodíodes i a través
+		d’un convertidor d’analògic a digital assignar-li un valor numèric.
+		El nombre de bits usat en eixos valors numèrics correspon a la profunditat de color del fotosensor,
+		que varia de 12 bits a 16 bits per píxel.
+	</p>
+
+	<figure>
+		<img src="imatges/Detall_fotosensor.png" />
+	</figure>
+
+	<p>
+		Una vegada acaba el procés de lectura i digitalització tots els nombres generats s'emmagatzemen en forma d’imatge raw
+		en la memòria interna de la càmera.
+	</p>
+	<p>
+		Raw en anglés significa cru, sense processar.
+		I és això exactament, una còpia exacta sense processar del valors que s’han generat en l’eixida del conversor A/D.
+	</p>
+	<p>
+		A partir d’ací es habitual convertir la imatge raw en una imatge jpeg, el que requerix tot una sèrie de correccions
+		i de transformacions.
+	</p>
+
+
+
+
+
+
+</body>

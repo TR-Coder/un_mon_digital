@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../estils/estils.css">
+</head>
+
+<body>
+	<h2>Unitats de mesura</h2>
+	<h3>Bit</h3>
+	<p>
+		Com hem estudiat, els ordinadors són màquines especialitzades en operar amb nombres expressats en el sistema binari.
+		Així doncs, no és d’estranyar que la unitat mínima d’informació servisca per a representar un valor binari d’un 1 o un 0.
+		Esta unitat mínima és el bit, terme que ve de BInary uniT. El símbol de les unitats del bit és una b minúscula.
+	</p>
+
+	<h3>Byte o octet</h3>
+	<p>
+		Si volem expressar nombres més grans ajuntem 8 bits per a formar el que s’anomena un byte.
+		També és habitual utilitzar el terme octet.
+		El símbol de les unitats d’un byte és una B majúscula.
+	</p>
+	<p>
+		Amb un byte es poden expressar 256 nombres, del 0 al 255. Dit en binari, del 0000 0000<sub>2</sub> al l'1111 1111<sub>2</sub>.
+	</p>
+
+	<figure>
+		<img src="imatges/Byte8bits.png" />
+	</figure>
+
+	<h3>Múltiples del byte</h3>
+	<p>
+		A partir del byte, s’utilitzen els múltiples habituals del Sistema Internacional d'Unitats com són la K (quilo), la M (mega),
+		la T (tera) o la G (giga), que afegim com a sufix, per exemple, en el kilòmetre (Km), el megavat (MW) o en el gigahertz (GHz).
+	</p>
+	<p>
+		Ara bé, a diferència de com passa amb altres unitats com el pes o els metres, per citar algun exemple,
+		els múltiples del byte no van de 1.000 en 1.000, sinó que, a causa de que quan treballem amb bytes utilitzem el sistema binari,
+		estes unitats van de 1.024 en 1.024.
+		S’utilitza 1.024 perquè és la potencia de 2 exacta més pròxima a 1.000, en particular 2<sup>10</sup> = 1.024.
+	</p>
+
+	<figure>
+		<img src="imatges/TaulaEquivalenciaMultiplesByte.png" />
+	</figure>
+
+	<h3>Ambigüitat amb les unitats d’informació</h3>
+	<p>
+		Amb les unitats tenim un xicotet problema. Per a expressar els múltiples del byte utilitzem la K, M, T i la G que, en realitat,
+		són múltiples utilitzats per al sistema decimal. Estrictament parlant, 1KB hauria de ser 1.000 bytes i no 1.024.
+	</p>
+	<p>
+		Per a solucionar esta discrepància s’han adoptat uns nous prefixos que expressen múltiples de 1.024.
+		Són el Ki, Mi, Ti i Gi. Així un KiB, un kibibyte (de kilo binary byte) equival exactament a 1.024 bytes i
+		elimina qualsevol possible ambigüitat.
+	</p>
+
+	<p>
+		En la pràctica, l’adopció d’estos prefixos es desigual i continua sent molt habitual seguir utilitzant els del sistema internacional.
+	</p>
+
+	<p>
+		Un exemple típic on es veu esta ambigüitat és la següent. Els fabricants i venedors comercialitzen la capacitat de les seues
+		unitats d’emmagatzemament com a discos, SSD i memòries USB expressant-la en múltiples de 1.000.
+		Quan connectem estos dispositius a l’ordinador i llegim la capacitat que ens oferixen ens trobem amb la sorpresa
+		de que és menor que la que ens ha venut el fabricant. En realitat, l’ordinador està utilitzant múltiples de 1.024,
+		el que fa que la capacitat disminuïsca un poc.
+	</p>
+	<p>
+		Per exemple, la següent figura és una impressió de pantalla de la finestra de les propietats d'un SSD.
+		Remarcat en roig es veu que l'SSD té una capacitat total de 255.037.747.200 bytes que equival a 237GB.
+		Per contra, el fabricant haurà indicat que es tracta d’un SSD de 255GB.
+	</p>
+	<figure>
+		<img src="imatges/FinestraPropietasSSD.png" />
+	</figure>
+
+	<p>
+		Es fàcil de comprovar que:
+	</p>
+	<ul>
+		<li>255.037.747.200B / 1024 = 249.060.300KB</li>
+		<li>249.060.300KB / 1024 = 243.222,94MB</li>
+		<li>243.222,94MB / 1024 = 237,52GB, com indica la finestra.</li>
+	</ul>
+
+	<h3>Unitats de velocitat de transmissió</h3>
+	<p>
+		Les unitats de mesura en comunicacions expressen la velocitat de transmissió de les dades
+		sempre en bits per segon (b/s o bps) i els seus múltiples són sempre en base 10, van de 1.000 en 1.000 seguint
+		el sistema internacional.
+	</p>
+
+	<p>
+		És important recordar que la velocitat de transmissió va en bps.
+		D'esta manera, quan afirmem que, per exemple, en casa tenim contractats 100 Megues,
+		hem de ser conscients que són 100Mbps (en bits i en múltiples de 1.000).
+	</p>
+	<p>
+		Això significa que, per posar un exemple, si estem baixant d’Internet un arxiu de 50MB (en bytes i en múltiples de 1.024)
+		ens costarà 4 segons. Ja que, fent els càlculs:
+	</p>
+	<ul>
+		<li>100Mbps equival a 100/8 = 12,5MBps</li>
+		<li>50MB / 12,5MBps = 4s</li>
+	</ul>
+
+	<figure>
+		<img src="imatges/TaulaEquivalenciaMultiplesVelocitatTransmissió.png" />
+	</figure>
+
+
+
+</body>

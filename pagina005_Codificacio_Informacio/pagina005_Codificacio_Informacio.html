@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../estils/estils.css">
+</head>
+
+<body>
+	<h2>Codificació de la informació</h2>
+
+	<p>
+		Per a representar la informació els éssers humans usem diferents tipus de signes què som capaços de distingir i interpretar,
+		com per exemple:
+	<ul>
+		<li>Nombres: 0 , 10, 154</li>
+		<li>Lletres: a, b, c, A, B, C</li>
+		<li>Símbols: ?, @, #</li>
+		<li>Icones, colors, imatges amb diferents tipus de formes com línies rectes, corbes i polígons</li>
+	</ul>
+
+	<p>
+		Com sabem els ordinadors només entenen de nombres en binari i això ens podria dur a preguntar-nos:
+		De quina manera es capaç l'ordinador d'emmagatzemar les lletres del nostre abecedari per a formar els textos que veiem per pantalla?
+	</p>
+
+
+	<p>
+		La resposta és que existixen unes taules que assignen a cada lletra, xifra, signe de puntuació i altres símbols un nombre.
+		Estes taules s’anomenen <i>Conjunt de Caràcters</i> o <i>Pàgina de codis</i>.
+	</p>
+	<p>
+		Els conjunts de caràcters més emprats són l’<i>ASCII</i> i l'<i>Unicode</i>, que descriurem a continuació.
+	</p>
+
+	<h3>ASCII (American National Standard Code for Information Interchange)</h3>
+	<p>
+		L’ASCII és un conjunt de caràcters que és un estàndard des de l’any 1967.
+		Utilitza 7 bits per a representar els caràcters, és a dir permet 2<sup>7</sup> = 128 caràcters.
+	</p>
+	<p>
+		D’estos 128 caràcters, 95 són imprimibles i corresponen a caràcters en majúscula i minúscula de l’abecedari anglés,
+		més les xifres i els signes de puntuació. Els altres 33 són caràcters no imprimibles també anomenats caràcters de control.
+		Per a guardar un caràcter en ASCII es necessita un byte, més exactament 7 dels 8 bits d'un byte.
+	</p>
+	<p>
+		El caràcters de control corresponen als 32 primers caràcters de la taula més el caràcter 127.
+		La majoria d’estos caràcter estan obsolets i no s’usen. Hem de tindre en compte que l’ASCII permetia controlar
+		algunes funcions en màquines com impressores, perforadores de targetes o teletips.
+		Alguns caràcters de control s’usen en alguns protocols de transmissió de dades com els caràcters CR, ACK, ESC, XON i XOFF entre altres.
+	</p>
+
+	<figure>
+		<img src="imatges/Taula ASCII.png" />
+	</figure>
+
+	<h3>ASCII estés</h3>
+	<p>
+		L’ASCII està pensat per a l’idioma anglés i no inclou ni caràcters accentuats ni altres caràcters específics d’altres alfabets,
+		com al ñ o la ç, per posar algun exemple familiar. Per a codificar estos caràcters es va aprofitar el 8é bit i es van crear
+		diferents variants del codi ASCII original que, en general, es coneixen com a codi ASCII estés.
+	</p>
+
+	<p>
+		Una de les variants més difosa és la ISO 8859 que admet 16 subvariants, de la ISO-8859-1 a la ISO-8859-16,
+		que proporcionen diferents signes necessaris per a diverses llengües.
+		La més estesa ha sigut la ISO-8859-1, també coneguda com Alfabet llatí 1 (o ISO Latin 1) que afegix caràcters per a moltes
+		llengües europees com l’espanyol, català, francés, portugués, noruec, etc.
+	</p>
+	<p>
+		En particular, Microsoft va crear els seus propis conjunts de caràcters basats amb l’ISO 8859 per a utilitzar-los en el
+		seu sistema operatiu Windows. El més estes en Europa va ser la variant de l’ISO 8859-1,
+		coneguda com a <i>Windows-1252</i>. Les versions actuals de Windows codifiquen en Unicode.
+	</p>
+
+
+	<h3>Unicode</h3>
+	<p>
+		Abans d’Unicode les diferents codificacions de caràcters no eren universals i no cobrien el caràcters per a totes
+		les llengües del món.
+	</p>
+	<p>
+		En ocasions, estes codificacions entraven en conflicte entre elles. Per exemple, en documents plurilingües,
+		diferents codificacions podien utilitzar el mateix nombre per a dos caràcters diferents, o utilitzar nombres diferents
+		per al mateix caràcter.
+		Un altre problema es produïa en la transferència de dades entre sistemes que utilitzaven diferents codificacions
+		produint-se errors quan es convertien els caràcters d’una codificació amb una l’altra.
+	</p>
+	<p>
+		Unicode és un estàndard que definix una gran taula on queden reflectits els caràcters de la majoria de le llengües del món,
+		tant actuals com a mortes, a més de signes de puntuació, de control i altres símbols utilitzats en l’escriptura de textos.
+	</p>
+
+	<p>
+		En Unicode cada caràcter s’identifica per un nombre, anomenat punt de codi, i per una descripció.
+		Per a expressar un caràcter s’escriu <strong>U+</strong> seguit del punt de codi codificat en hexadecimal.
+		Alguns exemples són:
+	</p>
+	<figure>
+		<img src="imatges/Exemple_Unicode.png" />
+	</figure>
+	<p>
+		Per conveniència Unicode esta subdividit en 17 nivells, anomenats plànols.
+		Cada plànol conté 65.536 punts de codi.
+		Això no es casual, ja que 2<sup>16</sup>=65.536, que són les combinacions que permeten 2 bytes.
+		Així, Unicode permet codificar 17*2<sup>16</sup> = 1.114.112 caràcters.
+		Com per a expressar del plànol 0 al 17 necessitem 5 bits, un punt de codi està format per estos 5 bits del plànol
+		més 16 bits com a desplaçament dins d'eixe plànol.
+	</p>
+	<figure>
+		<img src="imatges/Format_punt_codi_Unicode.png" />
+	</figure>
+	<p>
+		La majoria de plànols no tenen encara cap caràcter assignat, estan buits. I no tots els plànols estan plens.
+		En cada nova versió d’Unicode es van afegint nous caràcters.
+	</p>
+	<p>
+		El plànol més important és el nivell 0, conegut com a Nivell Multilingüe Bàsic, o BMP per les seues sigles en anglés.
+		Este plànol conté quasi tots els caràcters de les llengües modernes, entre elles les romàniques.
+		Els plànols superiors contenen caràcters històrics i símbols addicionals menys convencionals.
+	</p>
+	<p>
+		Els plànols es subdividixen en blocs.
+		La següent imatge, extreta de la Wikipedia, mostra els blocs en què està estructurat el plànol 0. Fixa’t que:
+	</p>
+	<ul>
+		<li>
+			El bloc CJK és el més gran. Està dedicat a codificar caràcters xinesos, japonesos i coreans.
+		</li>
+		<li>
+			Per temes de compatibilitat, els primers 256 caràcters d’Unicode són els mateixos que els de l’ISO-8859-1.
+		</li>
+	</ul>
+
+	<figure>
+		<img src="imatges/Estructura_planol_0_Unicode_wikipedia.svg" />
+	</figure>
+
+
+	<h3>Codificació Unicode: UTF-8, UTF-16 i UTF-32</h3>
+
+
+	<p>
+		La codificació dels caràcters en ASCII és molt senzilla. Per exemple, al caràcter A li correspon el nombre 65
+		dins de la taula ASCII i l’ordinador la codifica com un byte amb el valor 65. Necessitem 8 bits (1 byte) per a
+		codificar qualsevol caràcter.
+	</p>
+	<figure>
+		<img src="imatges/Lletra_A_en_ASCII.svg" />
+	</figure>
+	<p>
+		Unicode, en canvi, utilitza una codificació anomenada UTF (Unicode Translation Format) de la qual tenim tres
+		variants: <strong>UTF-32</strong>, <strong>UTF-16</strong> i <strong>UTF-8</strong>.
+	</p>
+	<p>
+		Això implica que un mateix caràcter es pot codificar de diferents maneres.
+	</p>
+	<p>
+		Com hem vist, amb una codificació directa necessitaríem 21 bits,
+		i considerant que la majoria de vegades només s’usen els caràcters del plànol 0,
+		que caben en 16 bits, i que en moltes ocasions amb el codis ISO-8859-1 en tenim prou, que caben en 8 bits,
+		estaríem desperdiciant memòria i fent que els arxius pesaren més del necessari.
+	</p>
+
+	<p>A continuació es descriu com es codifiquen les diferents variants UTF.</p>
+
+	<ul>
+		<li>
+			<strong>UTF-32</strong>: És una codificació directa. Cada caràcter utilitza sempre 4 bytes que representen el nombre del caràcter dins de la taula Unicode.
+			És el que més espai ocupa. Permet saber per endavant l’espai que ocuparà un text.
+		</li>
+		<li>
+			<strong>UTF-16</strong>: Utilitza 2 bytes quan els caràcters pertanyen al plànol 0 i 4 bytes per a la resta de plànols Unicode.
+		</li>
+		<li>
+			<strong>UTF-8</strong>: Utilitza 1 byte per a representar els caràcters ISO-8859-1, que hem dit ocupen les primeres 256 posicions d’Unicode.
+			Utilitza 2 bytes quan codifica algunes llengües del plànol 0, com les romàniques.
+			Utilitza 3 bytes per a la resta de caràcters del plànol 0.
+			I, finalment, 4 bytes per la resta de plànols.
+		</li>
+	</ul>
+
+	<p>Com a exemple, la següent figura mostra com es codifiquen 4 caràcters amb les diferents variants UTF.</p>
+
+	<figure>
+		<img src="imatges/Compartiva_UTF_8_16_32.png" />
+	</figure>
+
+
+	<h3>Curiositats</h3>
+	<h4>Codificacions utilitzades habitualment</h4>
+	<p>
+		La major part d’aplicacions escrites per a Windows utilitzen codificació UTF-16, mentre que
+		les de Mac OS i les de Linux utilitzen UTF-8, a l'igual que la majoria de pàgines web.
+	</p>
+
+	<h4>Ordenació per nom</h4>
+	<p>
+		En la següent figura hem seleccionat 3 fragments de la taula ASCII. Un correspon als nombres del 0 al 9,
+		l’altre a les lletres majúscules i l’últim a les lletres minúscules.
+	</p>
+
+	<figure>
+		<img src="imatges/Fragments_taula_ASCII.png" />
+	</figure>
+
+	<p>
+		Fixa’t que els nombres tenen la seua pròpia codificació, la que va dels codis 48 al 57.
+		D’esta manera, el 0 es codifica amb el codi 48. Realment, este 0 de la taula no és un nombre sinó que
+		és el símbol que representa al nombre 0. Digue'm que este 0 és com qualsevol altre caràcter, com una A per exemple.
+	</p>
+
+	<p>
+		Hem de distingir entre el valor que té un nombre qualsevol com pot ser el 35 (00100011<sub>2</sub>) de com es codifica.
+		Este 35 en ACCII, segons la taula, seria amb els codis 51 i 53 (00110011<sub>2</sub> i 00110101<sub>2</sub>).
+	</p>
+
+	<p>
+		Més coses.
+		Fixa’t també en que primer van els nombres (codis del 48 al 57), després van les lletres majúscules (del 65 al 90) i,
+		per últim, les lletres minúscules (del 97 al 122).
+	</p>
+
+	<p>
+		Quan un programa ha d’ordenar una llista de noms es guia pels codis de la taula ASCII. És per això que, en una llista ordenada
+		de noms:
+	</p>
+	<ul>
+		<li>
+			Antoni apareixerà per davant que Josep, perquè primer està el codi 65 de la A i després el codi 74 de la J.
+		</li>
+		<li>
+			Andrea apareixerà per davant d’Antoni, perquè el codi de la d en Andrea va per davant del codi de la t en Antoni.
+		</li>
+		<li>
+			Antoni apareixerà per davant d’antoni (la a en minúscula).
+		</li>
+		<li>
+			Dos arxius, un amb el nom <i>1_exercici.txt</i> estarà per davant d’un altre amb el nom <i>exercici_1.txt</i>,
+			perquè els nombres van per davant de les lletres.
+		</li>
+	</ul>
+	<p>
+		També podem trobar-no casos que ens resulten estranys. Per exemple, que <i>23_alumne</i> estiga per davant de <i>3_alumne</i>,
+		quan numèricament el 23 va després del 3. Però és correcte, ja que estrictament, el caràcter 3 està per davant del caràcter _.
+	</p>
+
+	<h4>L'espai en blanc</h4>
+	<p>
+		Un espai en blanc és un lletra i està codificada amb el codi 32 ASCII.
+	</p>
+	<p>
+		Els espais en blanc ocupen espai (bytes) i és el mateix espai que ocuparia qualsevol altra lletra.
+	</p>
+	<p>
+		Els noms que comencen per un espai en blanc van per davant d’aquells que comencen per un nombre o una lletra.
+	</p>
+
+	<p>
+		Quan introduïm un <i>usuari</i> i una <i>contrasenya</i> hem d’anar en compte en no posar espais de més,
+		tant a l’inici com al final, a no ser que formen part d’ells. No es igual l'usuari &lt;alumne> que l'usuari &lt; alumne>,
+		amb un espai inicial.
+	</p>
+
+	<h4>Caixes de text</h4>
+	<p>
+		Un dels components típics de les interfícies gràfiques dels programes són les caixes de text.
+		En elles l’usuari introduïx text per al programa. I és sempre text, encara que teclegem nombres, no són nombres,
+		són els símbols que representen les xifres del nombres.
+	</p>
+	<p>La següent figura mostra una finestra amb dos caixes de text, una per a introduir l'usuari i l'altra per a la contrasenya</p>
+	<figure>
+		<img src="imatges/Caixa_text.png" />
+	</figure>
+
+	<h4>Consideracions</h4>
+	<p>
+		Quan un programa distingix entre les majúscules i les minúscules es diu que és <i>sensible</i> a les majúscules i a les minúscules.
+		A nivell tècnic es diu que és <i>case sensitive</i>.
+	</p>
+
+
+	<p>
+		El que hem estudiat sobre l’ordenació, els espais en blanc i en general de la codificació de caràcters pot ser alterat pels programes.
+		D’esta manera, un programa pot eliminar els espais en blancs inicials i finals perquè considera que són un error d’introducció
+		de dades.
+		Pot també no distingir entres les majúscules i les minúscules.
+		A l’hora d’ordenar, pot considerar que les lletres accentuades equivalen a les no accentuades,
+		o fer que aquells noms que comencen per un nombre tinguen una ordenació basada en l’ordre numèric i
+		no en la seua codificació de caràcters interna, etc.
+	</p>
+	<p>
+		En estos subapartats hem parlat d’ASCII, quan la codificació més utilitzada és l’UTF8. Recordem que l’ASCII està inclòs en l’Unicode. De totes maneres hem simplificat, hem considerat només l’alfabet llatí, i no ens hem ficat amb vocals amb titlla, ñ ni en altres històries.
+	</p>
+
+</body>

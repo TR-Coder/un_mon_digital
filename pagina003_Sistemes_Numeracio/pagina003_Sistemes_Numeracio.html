@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../estils/estils.css">
+</head>
+
+<body>
+	<h2>Sistemes de numeració</h2>
+	<p>Un sistema de numeració és un conjunt de símbols i de regles que permeten representar qualsevol nombre.</p>
+
+	<h3>Sistemes de numeració posicional: El sistema decimal</h3>
+	<p>
+		El sistema de numeració que emprem habitualment és el sistema decimal, també conegut com a sistema de base 10 perquè
+		utilitza deu símbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. A cada símbol se’l coneix com una xifra.
+	</p>
+	<p>
+		El sistema decimal utilitza les regles dels sistemes de numeració posicional que es caracteritzen perquè cada xifra
+		aporta un pes al conjunt del nombre segons la posició que ocupa dins d’ell.
+		És allò que tots hem aprés en matemàtiques de les unitats, desenes, centenes, milers, etc.
+	</p>
+
+	<p>
+		Així per exemple, el nombre decimal 5.283 té un valor que ve donat per l'operació:
+	</p>
+	<p>
+		5283 = 5.000 + 200 + 80 + 3 = 5·1000 + 2·100 + 8·10 + 3·1
+	</p>
+	<p>
+		Com es veu cada dígit està multiplicat per un pes 10 vegades superior que el dígit situat a la seua dreta.
+		Resulta pràctic escriure el pes de cada posició en potències de 10, es a dir:
+	</p>
+	<p>
+		1000=10<sup>3</sup>, 100=10<sup>2</sup>, 10=10<sup>1</sup> i 1=10<sup>0</sup>
+	</p>
+	<p>
+		D'esta manera el nombre 5.283 escrit en potències de 10 és pot expressar com a:
+	</p>
+	<p>
+		5.283 = 5·10<sup>3</sup> + 2·10<sup>2</sup> + 8·10<sup>1</sup> + 3·10<sup>0</sup>
+	</p>
+
+	<h3>El sistema binari: Justificació</h3>
+	<p>
+		Abans de res vegem perquè en informàtica s’utilitza el sistema binari enlloc del decimal.
+	</p>
+	<p>
+		La part més important del maquinari són els components electrònics que el formen.
+		Estos components electrònics són el vertader cor de l’ordinador i els que fan tots els càlculs i executen els programes.
+	</p>
+	<p>
+		He de tindre clar que un ordinador només manipula nombres. Tot el que rep dels dispositius d’entrada, el que emmagatzema, els càlculs que fa, les instruccions dels programes que executa, les dades que s’envien als perifèrics. Tot, són nombres.
+	</p>
+	<p>
+		Per tant, podríem afirma que un ordinador és un màquina especialitzada en el maneig automàtic de nombres.
+	</p>
+	<p>
+		La raó per la qual s’utilitza el sistema binari i no el decimal és perquè si utilitzarem el sistema decimal
+		seria molt complicat fabricar els components electrònics.
+	</p>
+	<p>
+		Imaginem que necessitem un circuit electrònic capaç d’emmagatzemar un nombre com el 15734. Seria alguna cosa com això:
+	</p>
+
+	<figure>
+		<img src="imatges/Commutador_8_xifres_decimals.png" />
+	</figure>
+
+	<p>
+		En la figura es veu que tenim com un commutadors. Cada commutador té 10 posicions possibles que permeten emmagatzemar cada
+		dígit del 15734 en forma de tensió elèctrica. De 0 Volts a 9 Volts.
+	</p>
+
+	<p>
+		Evidentment això és una simplificació, els components electrònics no són així ni treballen amb estes tensions tant altes. Però no ens desviem del tema.
+	</p>
+
+	<p>
+		Centrem-nos en els commutadors. Es evident que si enlloc d’utilitzar commutadors com estos:
+	</p>
+
+	<figure>
+		<img src="imatges/Commutador_decimal.png" />
+	</figure>
+
+	<p>
+		N’utilitzem d’estes tipus:
+	</p>
+
+	<figure>
+		<img src="imatges/Commutador_binari.png" />
+	</figure>
+
+	<p>
+		Pareixen més senzills, ja que només tenen dos posicions i només cal jugar amb dos nivells de tensió enlloc de 10 com abans.
+		I ací està el quid de la qüestió. Un commutador senzill es més fàcil de fabricar, ocupa menys espai, consumix menys energia,
+		és més ràpid de canviar del nivell 0 a l'1. Tot són avantatges.
+		L’únic inconvenient, no massa gran com vorem, es que les xifres per a expressar els nombres passaran de tindre 10 valors a només 2.
+	</p>
+
+	<p>
+		El sistema binari és un altra manera de representar els nombres on, enlloc de nou xifres com el decimal,
+		n’utilitza només dos, el zero i l’un.
+	</p>
+
+	<h3>El sistema binari: Funcionament</h3>
+	<p>
+		El sistema de numeració binari, o de base 2, utilitza només dos xifres, el 0 i l’1, enlloc de les 10 del sistema decimal.
+	</p>
+	<p>
+		A l’igual que el sistema decimal, el sistema binari és un sistema posicional, el que significa que cada xifra aporta un pes al nombre segons
+		la posició que ocupa. La diferència està en que, mentre que en el sistema decimal cada posició val 10 vegades més que
+		la posició de la seua dreta, en el sistema binari val 2 vegades més.
+	</p>
+	<p>
+		Això vol dir que, mentre els nombres decimals s’expressen com una suma de potències de 10, els nombres en binari
+		s’expressem com una suma de potències de 2.
+	</p>
+	<p>
+		Per exemple, el nombre binari 10110 té un valor que ve donat per l'operació:
+	</p>
+	<p>
+		10110 = 1·16 + 0·8 + 1·4 + 1·2 + 0·1
+	</p>
+	<p>
+		Com es veu cada dígit està multiplicat per un valor que és 2 vegades superior que el dígit situat a la seua dreta.
+	</p>
+	<p>
+		Resulta pràctic escriure el pes de cada posició en potències de 2, es a dir:
+	</p>
+	<p>
+		16=2<sup>4</sup>, 8=2<sup>3</sup>, 4=2<sup>2</sup> , 2=2<sup>1</sup> i 0=2<sup>0</sup>
+	</p>
+	<p>
+		D'esta manera el nombre 10110 escrit en potències de 2 és pot expressar com a:
+	</p>
+	<p>
+		10110 = 1·2<sup>4</sup> + 0·2<sup>3</sup> + 1·2<sup>2</sup> + 1·2<sup>1</sup> + 0·2<sup>0</sup>
+	</p>
+	<p>
+		Si fem els càlculs obtindre el valor en decimal que correspon al nombre en binari 10110.
+	</p>
+	<p>
+		10110 = 1·2<sup>4</sup> + 0·2<sup>3</sup> + 1·2<sup>2</sup> + 1·2<sup>1</sup> + 0·2<sup>0</sup> = 22 decimal
+	</p>
+
+	<p>
+		Mira este nombre: 11. Està en binari o en decimal?
+	</p>
+	<p>
+		Per a evitar ambigüitats quan treballem amb sistemes de numeració es col·loca un subíndex que indica la base
+		amb què està expressat el nombre. Un 10 en el cas del sistema decimal i un 2 en el binari. Axí:
+	</p>
+	<p>
+		11<sub>10</sub> és el nostre onze en decimal
+	</p>
+	<p>
+		11<sub>2</sub> està en binari i equival al 1·2<sup>1</sup> + 1·2<sup>0</sup> = 3 en decimal.
+	</p>
+
+	<p>
+		Per a passar un nombre de decimal a binari fem divisions successives per 2 fins a no poder més.
+		En acabar agafarem la seqüència de resius que hem obtingut en cada divisió anant de l´últim residu obtingut al primer.
+		Vegem-ho a un exemple:
+	</p>
+
+	<figure>
+		<img src="imatges/ExempleConversioDecimalBinari.svg" />
+	</figure>
+
+	<h3>El sistema binari: curiositats</h3>
+
+	<p>
+		Com es llig un nombre en binari?
+	</p>
+	<p>
+		En decimal és fàcil, 1527, és el mil cinc-cents vint-i-set .
+		Però com és llig en binari l'10110.
+	</p>
+	<p>
+		No faces garrama i digues que és el deu mil cent deu. Es tracta de l'10110<sub>2</sub> i no de l'10110<sub>10</sub>.
+	</p>
+	<p>
+		Bé, no es lligen, es lletregen. Seria l’u, zero, u, u, zero.
+	</p>
+	<p>
+		T’has fixat que en alguns interruptors hi pots trobar uns símbols com estos:
+	</p>
+	<figure>
+		<img src="imatges/SimbolZeroUnEnInterruptors.png" />
+	</figure>
+	<p>
+		I no són sospitosament pareguts a un 1 i un 0 binari.
+	</p>
+	<p>
+		Recorda: 0 apagat i 1 encés.
+	</p>
+
+	<p>Un acudit informàtic:</p>
+
+	<figure>
+		<img src="imatges/ChisteSumaBinaria.png" />
+	</figure>
+
+	<p>Si no l'entens has de tornar a mirar-te el tema, ho sent molt.</p>
+
+
+	<h3>El sistema hexadecimal</h3>
+
+	<p>
+		Un altre sistema de numeració molt utilitzat en informàtica és el sistema hexadecimal, o de base 16.
+		Però no hem quedat ja en que utilitzem el binari, perquè un altre?
+	</p>
+
+	<p>
+		Un dels desavantatges de treballar amb nombres expressats en sistema binari és que tenen moltes xifres.
+		Per exemple el 1.354.694<sub>10</sub> equival a l'101001010101111000110<sub>2</sub>.
+	</p>
+
+	<p>
+		Com es veu, és una rastre d’uns i zeros difícils de manipular.
+		Intenta escriure’l sense equivocar-te, voràs que és fàcil confondre entre un 0 i un 1.
+		La solució ha vingut del sistema hexadecimal.
+	</p>
+
+	<p>
+		Com el decimal i el binari, el sistema hexadecimal es posicional.
+		Fem-ho per comparació, el sistema binari és una suma de potències de 2, el decimal de potències de 10 i
+		el hexadecimal ho serà doncs de potències de 16. Per exemple:
+	</p>
+
+	<p>
+		2856<sub>16</sub> = 2·16<sup>3</sup> + 8·16<sup>2</sup> + 5·16<sup>1</sup> + 6·16<sup>0</sup> = 10.326<sub>10</sub>
+	</p>
+
+	<p>
+		Prou fàcil. Fixa’t amb els subíndex 16 i 10 per a saber en quina base estem.
+	</p>
+	<p>
+		Un detallet. El binari, té dos xifres, 0 i 1. El decimal 10, del 0 a l’1.
+		I l’hexadecimal 16. Ara bé, en hexadecimal quina és la xifra que seguix al 9?
+	</p>
+	<p>
+		És incorrecta la resposta 10<sub>16</sub>, ja que este nombre no equival al nostre 10 en decimal sinó al
+		1·16<sup>1</sup> + 0·16<sup>0</sup> = 16<sub>10</sub>.
+		El que passa és en falten símbols per a expressar xifres superiors al 9, les que en decimal anirien del 10 al 15.
+	</p>
+	<p>
+		Enlloc d’inventar símbols nous el que s’ha fet és utilitzar les primeres lletres de l’abecedari: A, B, C, D, E i F.
+		La A equival al 10 en decimal, la B a l’11 i així fins a la F que seria el 15.
+		En la seqüent taula es mostren els símbols que s'utilitzen en hexadecimal.
+	</p>
+	<figure>
+		<img src="imatges/Sistema hexadecimal.png" />
+	</figure>
+
+
+	<p>
+		Així, un nombre en hexadecimal ens resulta a primera vista un poc estrany ja que no estem acostumats a vore lletres en un nombre.
+		Exemple:
+	</p>
+	<p>
+		3AFC6<sub>16</sub> = 3·16<sup>4</sup> + 10·16<sup>3</sup> + 15·16<sup>2</sup> + 12·16<sup>1</sup> + 6·16<sup>0</sup> = 241606<sub>10</sub>
+	</p>
+
+	<p>
+		Hem dit que l’hexadecimal és útil perquè simplifica d’alguna manera llargues llistes d’1 i 0 en binari. Vegem com.
+	</p>
+
+	<p>
+		Per a passar a binari el nombre anterior 3AFC6<sub>16</sub> podríem, aprofitant que l’hem convertit ja a decimal,
+		fer la conversió de decimal a binari a base de divisions successives.
+		Encara que és correcte fer-ho així, és més ràpid amb el següent sistema que permet passar
+		d’hexadecimal a binari directament.
+	</p>
+
+	<p>
+		El que es fa és substituir cada digit en hexadecimal pel seu corresponent valor en binari, amb nombres de 4 bits i,
+		si cal, posant zeros a l’esquerra per a completar els 4 bits.
+	</p>
+	<p>
+		Per a fer la conversió dels dígits d’hexadecimal a binari podem utilitzar la següent taula.
+		En la pràctica es fa de cap, ja que es tracta de valors entre 0 i 15 que són fàcils de passar a binari.
+
+	<figure>
+		<img src="imatges/TaulaConversioHexadecimalBinari.png" />
+	</figure>
+
+	<p>Vegem un exemple:</p>
+
+	<figure>
+		<img src="imatges/ExempleConversioHexadecimalBinari.png" />
+	</figure>
+
+	<p>
+		De manera similar, passar de binari a hexadecimal és igual de senzill.
+		El que fem és, començant per la dreta del nombre binari, anar formant grupets de 4 en 4 bits i
+		després passar cada grup de 4 bits directament a hexadecimal.
+	</p>
+	<p>
+		Com a exemple podem seguir amb l’exemple anterior.
+	</p>
+	<figure>
+		<img src="imatges/ExempleConversioBinariHexadecimal.png" />
+	</figure>
+
+	<h3>El sistema octal</h3>
+	<p>
+		Un altre sistema de numeració que sol utilitzar, encara que no tant, és el sistema octal o sistema en base 8.
+		Ara que comprenem la lògica dels sistemes de numeració posicionals resulta fàcil estudiar qualsevol altre base.
+	</p>
+	<p>
+		La base octal està formada per 8 xifres: 0, 1, 2, 3, 4, 5, 6 i 7.
+	</p>
+	<figure>
+		<img src="imatges/Simbols_Base_octal.png" />
+	</figure>
+	<p>
+		Vorem amb un exemple com calcular l’equivalent en decimal d’un nombre en octal.
+	</p>
+	<p>
+		2751<sub>8</sub> = 2·8<sup>3</sup> + 7·8<sup>2</sup> + 5·8<sup>1</sup> + 2·8<sup>0</sup> = 1.513<sub>10</sub>
+	</p>
+	<p>
+		Es veu que, cada posició pesa 8 vegades més que la de la seua dreta i que la descomposició es fa en potències de 8.
+	</p>
+	<p>
+		De manera similar a com fem amb base 2, per a pasar un nombre de decimal a octal ho farem per divisions succesives
+		per 8 i prenent de l’últim al primer residu.
+	</p>
+	<figure>
+		<img src="imatges/ExempleConversioDecimalOctal.svg" />
+	</figure>
+
+	<p>
+		Com passava amb l’hexadecimal, podem passar ràpidament d’octal a binari.
+		La diferència està en que en hexadecimal preniem grups de 4 bits i en octal són de 3 bits.
+		La taula anterior mostra l’equivalència entre l'octal i el binari amb 3 xifres.
+	</p>
+	<figure>
+		<img src="imatges/ExempleConversioOctalBinari.png" />
+	</figure>
+
+	<p>
+		Passar de binari a octal també és immediat:
+	</p>
+	<figure>
+		<img src="imatges/ExempleConversioBinariOctal.png" />
+	</figure>
+
+</body>
